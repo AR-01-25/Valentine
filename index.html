@@ -703,5 +703,27 @@
         // Start the app when page loads
         window.addEventListener('DOMContentLoaded', () => app.init());
     </script>
+    <script>
+  const music = document.getElementById("bgMusic");
+  const musicSource = document.getElementById("musicSource");
+  const musicBtn = document.getElementById("musicToggle");
+
+  // Set the song
+  musicSource.src = "Love.mp3";  // Replace with your file name or URL
+  music.load();
+  music.volume = 0.5;
+
+  // Toggle play/pause
+  musicBtn.addEventListener("click", () => {
+      if (music.paused) {
+          music.play();
+          musicBtn.textContent = "⏸️ Pause Music";
+      } else {
+          music.pause();
+          musicBtn.textContent = "🎵 Play Love Songs";
+      }
+  });
+    </script>
+    
 </body>
 </html>
