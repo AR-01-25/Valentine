@@ -4,7 +4,7 @@ window.VALENTINE_CONFIG = {
     valentineName: "My Dear Sendu🧚‍♀️",
     
     // Browser tab title
-    pageTitle: "For Srimathi, My Forever ❤️💝",
+    pageTitle: "For Love My Forever ❤️💝",
     
     // Color theme (in HEX format)
     colors: {
