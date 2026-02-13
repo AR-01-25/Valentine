@@ -774,42 +774,6 @@
       }
   });
     </script>
-    <!-- 💕 Final Romantic Photo Reveal -->
-<div id="finalPhotoModal" class="photo-modal">
-    <div class="photo-content">
-        <span id="closeFinalPhoto">&times;</span>
-        <img id="finalPhotoImg" src="Sendu.jpg" alt="My Forever Love">
-        <h2 class="photo-message">
-            💖 நீ தான் என் வாழ்நாள் காதல் 💖<br>
-            Forever & Always ❤️
-        </h2>
-    </div>
-</div>
-    
-<script>
-function showFinalPhoto() {
-    const modal = document.getElementById("finalPhotoModal");
-    modal.style.display = "flex";
-    app.createHeartExplosion(40);
-}
 
-function closeFinalPhoto() {
-    document.getElementById("finalPhotoModal").style.display = "none";
-}
-
-document.getElementById("closeFinalPhoto").addEventListener("click", closeFinalPhoto);
-
-// Auto show after celebration
-const originalShowCelebration = app.showCelebration.bind(app);
-
-app.showCelebration = function () {
-    originalShowCelebration();
-    setTimeout(() => {
-        showFinalPhoto();
-    }, 3000); // Show after 3 seconds
-};
-</script>
-
-    
 </body>
 </html>
