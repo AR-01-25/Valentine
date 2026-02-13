@@ -206,7 +206,7 @@ window.VALENTINE_CONFIG = {
     
     // Celebration messages
     celebration: {
-        title: "🎉 YOU SAID YES! 🎉",
+        title: "🎉 YOU SAID YES!♥️🎉",
         message: "Now we're officially the cutest couple ever!",
         emojis: "💑 💍 💒 🌹 🍫 🥂 💘 💖 💗 💓 💕 💞"
     }
