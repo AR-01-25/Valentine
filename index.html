@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Dearest Valentine 💝</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Floating Elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .float-item {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.6;
+            animation: float linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0.6; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        /* Main Container */
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px rgba(255, 75, 75, 0.3);
+            max-width: 700px;
+            width: 95%;
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            border: 3px solid white;
+            margin: 20px;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #ff4757;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 0 #ffe6e6;
+        }
+        
+        /* Poem Section */
+        .poem-section {
+            background: linear-gradient(145deg, #fff0f5, #ffe4e9);
+            padding: 2rem;
+            border-radius: 40px;
+            margin: 1.5rem 0;
+            border: 2px dashed #ff99bb;
+            position: relative;
+            animation: glow 2s infinite;
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px #ffb6c1; }
+            50% { box-shadow: 0 0 20px #ff69b4; }
+            100% { box-shadow: 0 0 10px #ffb6c1; }
+        }
+        
+        .poem-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: #d43f6b;
+            margin-bottom: 1rem;
+        }
+        
+        .poem-lines {
+            font-size: 1.3rem;
+            color: #b34167;
+            line-height: 2;
+        }
+        
+        .poem-lines p {
+            margin: 0.5rem 0;
+            animation: slideIn 0.5s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Question Section */
+        .question-section {
+            transition: all 0.5s ease;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: #ff4757;
+            margin-bottom: 2rem;
+            animation: popIn 0.5s ease;
+        }
+        
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        /* Options Grid */
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .option-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 1.2rem;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid white;
+            box-shadow: 0 5px 0 #c0392b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .option-btn:hover {
+            background: #ff8787;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 0 #c0392b;
+        }
+        
+        .option-gif {
+            font-size: 2.5rem;
+            animation: bounce 1s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        /* Secret Answer */
+        .secret-answer {
+            margin: 1.5rem 0;
+        }
+        
+        .secret-btn {
+            background: linear-gradient(145deg, #ffb8b8, #ff9a9e);
+            color: #ff4757;
+            border: 2px dashed white;
+            padding: 1rem 2rem;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            animation: sparkle 1.5s infinite;
+        }
+        
+        @keyframes sparkle {
+            0% { box-shadow: 0 0 5px #ffd700; }
+            50% { box-shadow: 0 0 20px #ffd700; }
+            100% { box-shadow: 0 0 5px #ffd700; }
+        }
+        
+        .secret-btn:hover {
+            transform: scale(1.05);
+            background: #ffd700;
+            color: white;
+        }
+        
+        /* Love Meter */
+        .love-meter {
+            margin: 2rem 0;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 25px;
+            border-radius: 15px;
+            background: linear-gradient(90deg, #ff9a9e, #fad0c4, #ffd1ff);
+            outline: none;
+            -webkit-appearance: none;
+            margin: 2rem 0;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            border: 3px solid #ff6b6b;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        
+        .slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+        
+        .love-value-container {
+            font-size: 2rem;
+            color: #ff4757;
+            margin-top: 1rem;
+            display: block;
+        }
+        
+        .extra-love {
+            font-size: 2.5rem;
+            color: #ff1493;
+            margin-top: 1rem;
+            animation: pulse 1s infinite;
+        }
+        
+        .extra-love.super-love {
+            font-size: 3.5rem;
+            color: #ff69b4;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Celebration */
+        .celebration {
+            animation: fadeIn 1s;
+        }
+        
+        .celebration h2 {
+            font-size: 4rem;
+            animation: bounce 1s infinite;
+        }
+        
+        .celebration-text {
+            font-size: 2rem;
+            color: #ff4757;
+            margin: 1rem 0;
+        }
+        
+        .confetti {
+            position: fixed;
+            font-size: 2rem;
+            pointer-events: none;
+            z-index: 9999;
+            animation: confettiFall 3s ease-out forwards;
+        }
+        
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Progress Indicator */
+        .question-progress {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 1rem 0;
+        }
+        
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ffb6c1;
+            transition: all 0.3s;
+        }
+        
+        .progress-dot.active {
+            background: #ff4757;
+            transform: scale(1.3);
+            box-shadow: 0 0 10px #ff4757;
+        }
+        
+        /* Music Button */
+        .music-btn {
+            background: #ffb6c1;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: 2px solid white;
+            color: #ff4757;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .music-btn:hover {
+            background: #ff9eb5;
+            transform: scale(1.05);
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 1.5rem; }
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.6rem; }
+            .poem-title { font-size: 1.8rem; }
+            .poem-lines { font-size: 1.1rem; }
+            .options-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements"></div>
+
+    <div class="container">
+        <h1 id="valentineTitle"></h1>
+        
+        <!-- Music Player -->
+        <div id="musicControls" class="music-controls">
+            <button id="musicToggle" class="music-btn">🎵 Play Love Songs</button>
+            <audio id="bgMusic" loop>
+                <source id="musicSource" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="question-progress" id="progressIndicator"></div>
+
+        <!-- Poem Display Section -->
+        <div id="poemDisplay" class="poem-section hidden">
+            <div class="poem-title" id="poemTitle"></div>
+            <div class="poem-lines" id="poemLines"></div>
+        </div>
+
+        <!-- Questions will be dynamically inserted here -->
+        <div id="questionsContainer"></div>
+
+        <!-- Celebration Section -->
+        <div class="celebration hidden" id="celebration">
+            <h2 id="celebrationTitle"></h2>
+            <p class="celebration-text" id="celebrationMessage"></p>
+            <div class="sticker-grid" id="celebrationStickers"></div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script>
+        // Main Application
+        const app = {
+            config: window.VALENTINE_CONFIG,
+            currentQuestionIndex: 0,
+            totalQuestions: 0,
+            
+            init() {
+                this.setupBasics();
+                this.createFloatingElements();
+                this.setupMusic();
+                this.loadQuestion(0);
+            },
+            
+            setupBasics() {
+                document.title = this.config.pageTitle;
+                document.getElementById('valentineTitle').textContent = 
+                    `${this.config.valentineName}, my love... 💕`;
+                
+                this.totalQuestions = this.config.questions.length;
+                this.updateProgress();
+            },
+            
+            createFloatingElements() {
+                const container = document.querySelector('.floating-elements');
+                const allEmojis = [
+                    ...this.config.floatingEmojis.hearts,
+                    ...this.config.floatingEmojis.bears,
+                    ...this.config.floatingEmojis.cute
+                ];
+                
+                for (let i = 0; i < 30; i++) {
+                    setTimeout(() => {
+                        const item = document.createElement('div');
+                        item.className = 'float-item';
+                        item.innerHTML = allEmojis[Math.floor(Math.random() * allEmojis.length)];
+                        item.style.left = Math.random() * 100 + 'vw';
+                        item.style.animationDelay = Math.random() * 5 + 's';
+                        item.style.animationDuration = (10 + Math.random() * 20) + 's';
+                        item.style.fontSize = (1 + Math.random() * 2) + 'rem';
+                        container.appendChild(item);
+                    }, i * 200);
+                }
+            },
+            
+            setupMusic() {
+                const musicControls = document.getElementById('musicControls');
+                if (!this.config.music.enabled) {
+                    musicControls.style.display = 'none';
+                }
+            },
+            
+            updateProgress() {
+                const progressDiv = document.getElementById('progressIndicator');
+                progressDiv.innerHTML = '';
+                
+                for (let i = 0; i < this.totalQuestions; i++) {
+                    const dot = document.createElement('span');
+                    dot.className = 'progress-dot' + (i === this.currentQuestionIndex ? ' active' : '');
+                    progressDiv.appendChild(dot);
+                }
+            },
+            
+            showPoem(poemIndex) {
+                if (poemIndex === undefined) return;
+                
+                const poem = this.config.lovePoems[poemIndex];
+                const poemDiv = document.getElementById('poemDisplay');
+                const poemTitle = document.getElementById('poemTitle');
+                const poemLines = document.getElementById('poemLines');
+                
+                poemTitle.textContent = poem.title;
+                poemLines.innerHTML = poem.lines.map(line => `<p>${line}</p>`).join('');
+                
+                poemDiv.classList.remove('hidden');
+                
+                // Hide poem after 8 seconds
+                setTimeout(() => {
+                    poemDiv.classList.add('hidden');
+                }, 8000);
+            },
+            
+            loadQuestion(index) {
+                if (index >= this.totalQuestions) {
+                    this.showCelebration();
+                    return;
+                }
+                
+                this.currentQuestionIndex = index;
+                this.updateProgress();
+                
+                const question = this.config.questions[index];
+                const container = document.getElementById('questionsContainer');
+                
+                if (question.isLoveMeter) {
+                    container.innerHTML = this.buildLoveMeterHTML(question);
+                    this.setupLoveMeter();
+                } else if (question.isFinal) {
+                    container.innerHTML = this.buildFinalQuestionHTML(question);
+                } else {
+                    container.innerHTML = this.buildOptionsHTML(question, index);
+                }
+            },
+            
+            buildOptionsHTML(question, index) {
+                return `
+                    <div class="question-section" id="question${index}">
+                        <h2>${question.text}</h2>
+                        <div class="options-grid">
+                            ${question.options.map((opt, optIndex) => `
+                                <button class="option-btn" onclick="app.handleOption(${index}, ${optIndex})">
+                                    <span class="option-gif">${app.getRandomSticker(opt.gif)}</span>
+                                    <span>${opt.text}</span>
+                                </button>
+                            `).join('')}
+                        </div>
+                        ${question.secretAnswer ? `
+                            <div class="secret-answer">
+                                <button class="secret-btn" onclick="app.handleSecret(${index})">
+                                    ✨ ${question.secretAnswer} ✨
+                                </button>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            },
+            
+            buildLoveMeterHTML(question) {
+                return `
+                    <div class="question-section" id="loveMeterQuestion">
+                        <h2>${question.text}</h2>
+                        <div class="love-meter">
+                            <input type="range" min="0" max="100" value="50" class="slider" id="loveMeter">
+                            <p>
+                                <span class="love-value-container">
+                                    Love Level: <span id="loveValue">50</span>% 
+                                    <span id="loveMessage"></span>
+                                </span>
+                            </p>
+                        </div>
+                        <button class="secret-btn" onclick="app.nextQuestion()">Next Question 💕</button>
+                    </div>
+                `;
+            },
+            
+            buildFinalQuestionHTML(question) {
+                return `
+                    <div class="question-section" id="finalQuestion">
+                        <h2>${question.text}</h2>
+                        <div class="options-grid">
+                            ${question.options.map((opt, optIndex) => `
+                                <button class="option-btn final-option" onclick="app.handleFinalAnswer(${optIndex})">
+                                    <span class="option-gif">${app.getRandomSticker(opt.gif)}</span>
+                                    <span>${opt.text}</span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            },
+            
+            getRandomSticker(gifKey) {
+                const stickers = this.config.gifStickers[gifKey] || ['💝'];
+                return stickers[Math.floor(Math.random() * stickers.length)];
+            },
+            
+            handleOption(questionIndex, optionIndex) {
+                // Show a little surprise animation
+                this.createMiniConfetti();
+                
+                // Show the poem for this question
+                const question = this.config.questions[questionIndex];
+                if (question.poem !== undefined) {
+                    this.showPoem(question.poem);
+                }
+                
+                // Move to next question after a short delay
+                setTimeout(() => {
+                    this.nextQuestion();
+                }, 1000);
+            },
+            
+            handleSecret(questionIndex) {
+                this.createHeartExplosion(10);
+                const question = this.config.questions[questionIndex];
+                if (question.poem !== undefined) {
+                    this.showPoem(question.poem);
+                }
+                
+                // Secret answer jumps 2 questions ahead
+                setTimeout(() => {
+                    this.currentQuestionIndex = Math.min(
+                        this.currentQuestionIndex + 2, 
+                        this.totalQuestions - 1
+                    );
+                    this.loadQuestion(this.currentQuestionIndex);
+                }, 1500);
+            },
+            
+            handleFinalAnswer() {
+                this.createHeartExplosion(30);
+                this.createConfetti();
+                setTimeout(() => this.showCelebration(), 1000);
+            },
+            
+            setupLoveMeter() {
+                const meter = document.getElementById('loveMeter');
+                const value = document.getElementById('loveValue');
+                const message = document.getElementById('loveMessage');
+                
+                if (meter) {
+                    meter.addEventListener('input', () => {
+                        const val = parseInt(meter.value);
+                        value.textContent = val;
+                        
+                        if (val < 30) {
+                            message.innerHTML = '💕 ' + this.config.loveMessages.low;
+                        } else if (val < 60) {
+                            message.innerHTML = '💗 ' + this.config.loveMessages.medium;
+                        } else if (val < 90) {
+                            message.innerHTML = '💖 ' + this.config.loveMessages.high;
+                        } else {
+                            message.innerHTML = '✨ ' + this.config.loveMessages.extreme + ' ✨';
+                            this.createMiniConfetti();
+                        }
+                    });
+                }
+            },
+            
+            nextQuestion() {
+                this.currentQuestionIndex++;
+                if (this.currentQuestionIndex < this.totalQuestions) {
+                    this.loadQuestion(this.currentQuestionIndex);
+                } else {
+                    this.showCelebration();
+                }
+            },
+            
+            showCelebration() {
+                document.getElementById('questionsContainer').innerHTML = '';
+                document.getElementById('celebration').classList.remove('hidden');
+                
+                const celebration = document.getElementById('celebration');
+                document.getElementById('celebrationTitle').textContent = this.config.celebration.title;
+                document.getElementById('celebrationMessage').textContent = this.config.celebration.message;
+                
+                // Add celebration stickers
+                const stickers = document.getElementById('celebrationStickers');
+                stickers.innerHTML = this.config.celebration.emojis
+                    .split(' ')
+                    .map(emoji => `<span style="font-size: 3rem; margin: 0.5rem; animation: bounce 1s infinite">${emoji}</span>`)
+                    .join('');
+                
+                // Show a random love poem
+                this.showPoem(Math.floor(Math.random() * this.config.lovePoems.length));
+                
+                // Massive celebration
+                this.createHeartExplosion(50);
+                this.createConfetti(100);
+            },
+            
+            createMiniConfetti() {
+                for (let i = 0; i < 10; i++) {
+                    setTimeout(() => {
+                        const confetti = document.createElement('div');
+                        confetti.className = 'confetti';
+                        confetti.innerHTML = ['✨', '💖', '💕', '💗'][Math.floor(Math.random() * 4)];
+                        confetti.style.left = Math.random() * 100 + '%';
+                        confetti.style.animationDuration = (1 + Math.random() * 2) + 's';
+                        document.body.appendChild(confetti);
+                        setTimeout(() => confetti.remove(), 3000);
+                    }, i * 100);
+                }
+            },
+            
+            createConfetti(count = 50) {
+                for (let i = 0; i < count; i++) {
+                    setTimeout(() => {
+                        const confetti = document.createElement('div');
+                        confetti.className = 'confetti';
+                        confetti.innerHTML = this.config.celebration.emojis.split(' ')[
+                            Math.floor(Math.random() * this.config.celebration.emojis.split(' ').length)
+                        ];
+                        confetti.style.left = Math.random() * 100 + '%';
+                        confetti.style.animationDuration = (2 + Math.random() * 3) + 's';
+                        confetti.style.fontSize = (20 + Math.random() * 30) + 'px';
+                        document.body.appendChild(confetti);
+                        setTimeout(() => confetti.remove(), 5000);
+                    }, i * 50);
+                }
+            },
+            
+            createHeartExplosion(count = 20) {
+                for (let i = 0; i < count; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.innerHTML = ['❤️', '💖', '💗', '💓', '💕', '💞'][Math.floor(Math.random() * 6)];
+                        heart.style.position = 'fixed';
+                        heart.style.left = '50%';
+                        heart.style.top = '50%';
+                        heart.style.fontSize = (30 + Math.random() * 50) + 'px';
+                        heart.style.zIndex = '9999';
+                        heart.style.transform = `translate(-50%, -50%) rotate(${Math.random() * 360}deg)`;
+                        heart.style.animation = `float ${1 + Math.random()}s ease-out forwards`;
+                        document.body.appendChild(heart);
+                        setTimeout(() => heart.remove(), 2000);
+                    }, i * 100);
+                }
+            }
+        };
+
+        // Start the app when page loads
+        window.addEventListener('DOMContentLoaded', () => app.init());
+    </script>
+</body>
+</html>
