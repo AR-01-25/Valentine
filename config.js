@@ -236,9 +236,9 @@ window.VALENTINE_CONFIG = {
     
     // Music settings
     music: {
-        enabled: false,
-        autoplay: false,
-        musicUrl: "",
+        enabled: true,
+        autoplay: true,
+        musicUrl: "Love.mp3",
         volume: 0.5,
         startText: "🎵 Play Love Songs",
         stopText: "⏸️ Pause Music"
