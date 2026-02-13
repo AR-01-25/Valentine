@@ -1,10 +1,10 @@
 // Valentine's Day Configuration - Customize everything here! 💝
 window.VALENTINE_CONFIG = {
     // Your Valentine's name
-    valentineName: "My Love",
+    valentineName: "My Dear Sendu🧚‍♀️",
     
     // Browser tab title
-    pageTitle: "To My Dearest Valentine 💝",
+    pageTitle: "For Srimathi, My Forever ❤️💝",
     
     // Color theme (in HEX format)
     colors: {
